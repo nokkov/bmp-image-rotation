@@ -19,7 +19,7 @@ enum write_status  {
     WRITE_ERROR
 };
 
-header read_header(FILE* in);
 bmp_header set_header(uint64_t width, uint64_t height);
 enum read_status from_bmp( FILE* in, image* img );
 enum write_status to_bmp( FILE* out, image* img );
+header read_header(FILE* in);
