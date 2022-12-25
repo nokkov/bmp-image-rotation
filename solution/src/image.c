@@ -1,7 +1,7 @@
 #include "include/image.h"
 
-#include <stdlib.h>
 #include <stdint.h>
+#include <stdlib.h>
 #include <stdio.h>
 
 
