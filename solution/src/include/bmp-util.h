@@ -1,5 +1,5 @@
-#include <include/bmp.h>
-#include <include/image.h>
+#include "include/bmp.h"
+#include "include/image.h"
 #include <stdio.h>
 
 typedef struct header {

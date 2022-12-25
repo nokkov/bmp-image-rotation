@@ -1,5 +1,5 @@
-#include <include/bmp-util.h>
-#include <include/rotate.h>
+#include "include/bmp-util.h"
+#include "include/rotate.h"
 #include <stdio.h>
 #include <stdlib.h>
 
