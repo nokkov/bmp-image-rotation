@@ -1,8 +1,8 @@
-#include <stdint.h>
-#include <stdlib.h>
-#include <stdio.h>
-
 #include "include/image.h"
+
+#include <stdlib.h>
+#include <stdint.h>
+#include <stdio.h>
 
 
 uint8_t get_padding(uint32_t width) {
