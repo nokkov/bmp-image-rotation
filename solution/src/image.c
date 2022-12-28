@@ -1,8 +1,6 @@
 #include "include/image.h"
-
-#include <stdlib.h>
 #include <stdio.h>
-
+#include <stdlib.h>
 
 uint8_t get_padding(uint32_t width) {
     uint32_t bytes_per_row = width * sizeof(struct pixel);

@@ -1,5 +1,5 @@
-#include <stdint.h>
 #include <stddef.h>
+#include <stdint.h>
 
 typedef struct pixel {
     uint8_t b, g, r;
