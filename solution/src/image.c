@@ -1,6 +1,5 @@
 #include "include/image.h"
 
-#include <stdint.h>
 #include <stdlib.h>
 #include <stdio.h>
 

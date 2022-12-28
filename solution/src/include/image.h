@@ -12,4 +12,5 @@ typedef struct image {
 
 uint8_t get_padding(uint32_t width);
 image create_image(uint64_t width, uint64_t height);
+
 void free_image(struct image *image);
