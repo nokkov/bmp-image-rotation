@@ -83,10 +83,18 @@ enum write_status to_bmp(FILE* out, image* img) {
     struct pixel *data = img->data;
     size_t bytesInRow = sizeof(pixel) * bmpHeader.biWidth + padding;
     for (uint32_t y = 0; y < bmpHeader.biHeight; y++, data+= img->width) {
+        if (y == bmpHeader.biHeight -1) {
+               size_t bytesInRow = sizeof(pixel) * bmpHeader.biWidth;
+                if (fwrite(data, 1, bytesInRow, out) != bytesInRow) {
+                puts("An error occurred while writing bmp image data!");
+                return WRITE_ERROR;
+            }
+        } else {
         if (fwrite(data, 1, bytesInRow, out) != bytesInRow) {
             puts("An error occurred while writing bmp image data!");
             return WRITE_ERROR;
         }
+    }
     }
     return WRITE_OK;
 }
