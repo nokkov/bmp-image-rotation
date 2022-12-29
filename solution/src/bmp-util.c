@@ -64,6 +64,9 @@ enum read_status from_bmp(FILE* in, image* img) {
         if (y == bmpHeader.biHeight -1) {
             size_t bytesInRow = sizeof(pixel) * bmpHeader.biWidth;
             size_t bytesRead = fread(data, 1, bytesInRow, in);
+             if (bytesRead != bytesInRow) {
+                return READ_INVALID_BITS;
+            }
         } else {
         size_t bytesRead = fread(data, 1, bytesInRow, in);
         if (bytesRead != bytesInRow) {
