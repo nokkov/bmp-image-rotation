@@ -12,6 +12,7 @@ enum read_status {
     READ_INVALID_SIGNATURE,
     READ_INVALID_HEADER,
     READ_INVALID_BITS,
+    READ_ERROR
 };
 
 enum write_status  {
