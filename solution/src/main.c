@@ -39,6 +39,12 @@ int main(int  argc, char** argv ) {
 
     image rotatedImage = rotate(plainImage);
 
+    if (rotatedImage.data == NULL) {
+        free_image(&rotatedImage);
+        fclose(bmpImage);
+        return -1;
+    }
+
     FILE* fileRotated = fopen(argv[2], "wb");
     if (fileRotated == NULL)
         return -1;
