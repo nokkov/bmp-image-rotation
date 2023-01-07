@@ -23,21 +23,21 @@ header read_header(FILE* in) {
 bmp_header set_header(uint64_t width, uint64_t height) {
     int padding = get_padding(width);
     bmp_header bmpHeader;
-    bmpHeader.bfType = 0x4D42;
+    bmpHeader.bfType = BF_TYPE;
     bmpHeader.bfileSize = sizeof(bmp_header) + height * (width * sizeof(pixel) + padding);
-    bmpHeader.bfReserved = 0;
+    bmpHeader.bfReserved = RESERVED;
     bmpHeader.bOffBits = sizeof(bmp_header);
-    bmpHeader.biSize = 40;
+    bmpHeader.biSize = SIZE_HEADER;
     bmpHeader.biWidth = width;
     bmpHeader.biHeight = height;
-    bmpHeader.biPlanes = 1;
-    bmpHeader.biBitCount = 24;
-    bmpHeader.biCompression = 0;
-    bmpHeader.biSizeImage = 0;
-    bmpHeader.biXPelsPerMeter = 0;
-    bmpHeader.biYPelsPerMeter = 0;
-    bmpHeader.biClrUsed = 0;
-    bmpHeader.biClrImportant = 0;
+    bmpHeader.biPlanes = COLOR_PLANES;
+    bmpHeader.biBitCount = BITS_PER_PIXEL;
+    bmpHeader.biCompression = COMPRESSION;
+    bmpHeader.biSizeImage = BI_SIZE_IMAGE;
+    bmpHeader.biXPelsPerMeter = BI_X_PELS_PER_METER;
+    bmpHeader.biYPelsPerMeter = BI_Y_PELS_PER_METER;
+    bmpHeader.biClrUsed = BI_CLR_USED;
+    bmpHeader.biClrImportant = BI_CLR_IMP;
     return bmpHeader;
 }
 

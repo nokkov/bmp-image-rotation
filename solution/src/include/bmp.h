@@ -1,5 +1,16 @@
 #include  <stdint.h>
 
+const uint16_t BF_TYPE = 0x4D42;
+const uint32_t RESERVED = 0;
+const uint32_t SIZE_HEADER = 40;
+const uint16_t COLOR_PLANES = 1;
+const uint16_t BITS_PER_PIXEL = 24;
+const uint32_t COMPRESSION = 0;
+const uint32_t BI_SIZE_IMAGE = 0;
+const uint32_t BI_X_PELS_PER_METER = 0;
+const uint32_t BI_Y_PELS_PER_METER = 0;
+const uint32_t BI_CLR_USED = 0;
+const uint32_t BI_CLR_IMP = 0;
 
 typedef struct __attribute__((packed)) bmp_header  {
     uint16_t bfType;
