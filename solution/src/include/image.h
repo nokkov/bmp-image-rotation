@@ -1,7 +1,7 @@
 #include <stddef.h>
 #include <stdint.h>
 
-typedef struct pixel {
+typedef struct __attribute__((packed)) pixel {
     uint8_t b, g, r;
 } pixel;
 
