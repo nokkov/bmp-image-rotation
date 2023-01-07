@@ -51,6 +51,11 @@ enum read_status from_bmp(FILE* in, image* img) {
 
     bmpHeader = bmpHeaderShell.bmpHeader;
     *img = create_image(bmpHeader.biWidth, bmpHeader.biHeight);
+
+    if (img -> data == NULL) {
+            return READ_INVALID_BITS;
+    }
+
     if (fseek(in, bmpHeader.bOffBits, SEEK_SET) != 0)
         return READ_INVALID_SIGNATURE;
 
