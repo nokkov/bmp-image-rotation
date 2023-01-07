@@ -8,14 +8,14 @@ void describe_read_status(enum read_status status) {
     if (status == READ_OK)
         fprintf(stdout, "All good");
     else
-        fprintf(stdout, "Some wrong");
+        fprintf(stderr, "Some wrong");
 }
 
 void describe_write_status(enum write_status status) {
     if (status == WRITE_OK)
         fprintf(stdout, "All good");
     else
-        fprintf(stdout, "Some wrong");
+        fprintf(stderr, "Some wrong");
 }
 
 int main(int  argc, char** argv ) {
