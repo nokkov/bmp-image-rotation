@@ -4,6 +4,10 @@
 
 image rotate(image source ) {
     image result = create_image(source.height, source.width);
+    if (result.data == NULL) {
+        return result;
+    }
+    
     for (uint64_t y = 0; y < source.height; y++)
         for (uint64_t x = 0; x < source.width; x++) {
             pixel sourcePixel = source.data[x + y * source.width];
