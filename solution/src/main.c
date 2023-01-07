@@ -34,6 +34,8 @@ int main(int  argc, char** argv ) {
     if (readStatus != READ_OK) {
         fprintf(stderr,"An error occurred while opening the BMP file! Reason:");
         describe_read_status(readStatus);
+        free_image(&plainImage);
+        fclose(bmpImage);
         exit(-2);
     }
 
@@ -46,13 +48,22 @@ int main(int  argc, char** argv ) {
     }
 
     FILE* fileRotated = fopen(argv[2], "wb");
-    if (fileRotated == NULL)
+    if (fileRotated == NULL) {
+        free_image(&plainImage);
+        free_image(&rotatedImage);
+        fclose(bmpImage);
+        fclose(fileRotated);
         return -1;
+    }
 
     enum write_status writeStatus = to_bmp(fileRotated, &rotatedImage);
     if (writeStatus != WRITE_OK) {
         fprintf(stderr,"An error occurred while writing to BMP file! Reason:");
         describe_write_status(writeStatus);
+        free_image(&plainImage);
+        free_image(&rotatedImage);
+        fclose(bmpImage);
+        fclose(fileRotated);
         exit(-2);
     }
 
